@@ -58,7 +58,7 @@ router.get('/:id',
  * @apiParam {String{6..}} password User's password.
  * @apiParam {String} [name] User's name.
  * @apiParam {String} [picture] User's picture.
- * @apiParam {String=user,admin} [role=user] User's picture.
+ * @apiParam {String=user,admin} [role=user] User's permissions.
  * @apiSuccess (Sucess 201) {Object} user User's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 401 Master access only.

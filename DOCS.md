@@ -7,6 +7,13 @@
 	- [Authenticate with Github](#authenticate-with-github)
 	- [Authenticate with Google](#authenticate-with-google)
 	
+- [Medicine](#medicine)
+	- [Create medicine](#create-medicine)
+	- [Delete medicine](#delete-medicine)
+	- [Retrieve medicine](#retrieve-medicine)
+	- [Retrieve medicines](#retrieve-medicines)
+	- [Update medicine](#update-medicine)
+	
 - [PasswordReset](#passwordreset)
 	- [Send email](#send-email)
 	- [Submit password](#submit-password)
@@ -69,6 +76,102 @@
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>Google user accessToken.</p>							|
 
+# Medicine
+
+## Create medicine
+
+
+
+	POST /medicines
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| med_name			| 			|  <p>Medicine's med_name.</p>							|
+| description			| 			|  <p>Medicine's description.</p>							|
+| dosage			| 			|  <p>Medicine's dosage.</p>							|
+| prev_dose_taken			| 			|  <p>Medicine's prev_dose_taken.</p>							|
+| instructions			| 			|  <p>Medicine's instructions.</p>							|
+| next_dose_days			| 			|  <p>Medicine's next_dose_days.</p>							|
+| next_dose_hours			| 			|  <p>Medicine's next_dose_hours.</p>							|
+| next_dose_minutes			| 			|  <p>Medicine's next_dose_minutes.</p>							|
+| nextDose			| 			|  <p>Medicine's nextDose.</p>							|
+| dosage_times			| 			|  <p>Medicine's dosage_times.</p>							|
+| doses_per_day			| 			|  <p>Medicine's doses_per_day.</p>							|
+| main_usage			| 			|  <p>Medicine's main_usage.</p>							|
+
+## Delete medicine
+
+
+
+	DELETE /medicines/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve medicine
+
+
+
+	GET /medicines/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve medicines
+
+
+
+	GET /medicines
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update medicine
+
+
+
+	PUT /medicines/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| med_name			| 			|  <p>Medicine's med_name.</p>							|
+| description			| 			|  <p>Medicine's description.</p>							|
+| dosage			| 			|  <p>Medicine's dosage.</p>							|
+| prev_dose_taken			| 			|  <p>Medicine's prev_dose_taken.</p>							|
+| instructions			| 			|  <p>Medicine's instructions.</p>							|
+| next_dose_days			| 			|  <p>Medicine's next_dose_days.</p>							|
+| next_dose_hours			| 			|  <p>Medicine's next_dose_hours.</p>							|
+| next_dose_minutes			| 			|  <p>Medicine's next_dose_minutes.</p>							|
+| nextDose			| 			|  <p>Medicine's nextDose.</p>							|
+| dosage_times			| 			|  <p>Medicine's dosage_times.</p>							|
+| doses_per_day			| 			|  <p>Medicine's doses_per_day.</p>							|
+| main_usage			| 			|  <p>Medicine's main_usage.</p>							|
+
 # PasswordReset
 
 ## Send email
@@ -123,7 +226,7 @@
 | password			| String			|  <p>User's password.</p>							|
 | name			| String			| **optional** <p>User's name.</p>							|
 | picture			| String			| **optional** <p>User's picture.</p>							|
-| role			| String			| **optional** <p>User's picture.</p>							|
+| role			| String			| **optional** <p>User's permissions.</p>							|
 
 ## Delete user
 
