@@ -20,9 +20,6 @@ const { med_name, description, dosage, prev_dose_taken, instructions, next_dose_
  * @apiParam dosage Medicine's dosage.
  * @apiParam prev_dose_taken Medicine's prev_dose_taken.
  * @apiParam instructions Medicine's instructions.
- * @apiParam next_dose_days Medicine's next_dose_days.
- * @apiParam next_dose_hours Medicine's next_dose_hours.
- * @apiParam next_dose_minutes Medicine's next_dose_minutes.
  * @apiParam nextDose Medicine's nextDose.
  * @apiParam dosage_times Medicine's dosage_times.
  * @apiParam doses_per_day Medicine's doses_per_day.

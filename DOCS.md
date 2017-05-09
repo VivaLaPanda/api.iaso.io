@@ -19,6 +19,13 @@
 	- [Submit password](#submit-password)
 	- [Verify token](#verify-token)
 	
+- [Setting](#setting)
+	- [Create setting](#create-setting)
+	- [Delete setting](#delete-setting)
+	- [Retrieve setting](#retrieve-setting)
+	- [Retrieve settings](#retrieve-settings)
+	- [Update setting](#update-setting)
+	
 - [User](#user)
 	- [Create user](#create-user)
 	- [Delete user](#delete-user)
@@ -95,9 +102,6 @@
 | dosage			| 			|  <p>Medicine's dosage.</p>							|
 | prev_dose_taken			| 			|  <p>Medicine's prev_dose_taken.</p>							|
 | instructions			| 			|  <p>Medicine's instructions.</p>							|
-| next_dose_days			| 			|  <p>Medicine's next_dose_days.</p>							|
-| next_dose_hours			| 			|  <p>Medicine's next_dose_hours.</p>							|
-| next_dose_minutes			| 			|  <p>Medicine's next_dose_minutes.</p>							|
 | nextDose			| 			|  <p>Medicine's nextDose.</p>							|
 | dosage_times			| 			|  <p>Medicine's dosage_times.</p>							|
 | doses_per_day			| 			|  <p>Medicine's doses_per_day.</p>							|
@@ -207,6 +211,84 @@
 
 	GET /password-resets/:token
 
+
+# Setting
+
+## Create setting
+
+
+
+	POST /settings
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| notification_type			| 			|  <p>Setting's notification_type.</p>							|
+| initial_notification			| 			|  <p>Setting's initial_notification.</p>							|
+| additional_notification			| 			|  <p>Setting's additional_notification.</p>							|
+
+## Delete setting
+
+
+
+	DELETE /settings/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve setting
+
+
+
+	GET /settings/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve settings
+
+
+
+	GET /settings
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update setting
+
+
+
+	PUT /settings/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| notification_type			| 			|  <p>Setting's notification_type.</p>							|
+| initial_notification			| 			|  <p>Setting's initial_notification.</p>							|
+| additional_notification			| 			|  <p>Setting's additional_notification.</p>							|
 
 # User
 
