@@ -8,17 +8,19 @@ export const create = ({ user, bodymen: { body } }, res, next) =>
     .then(success(res, 201))
     .catch(next)
 
-export const index = ({ querymen: { query, select, cursor } }, res, next) =>
+export const index = ({ user, querymen: { query, select, cursor } }, res, next) =>
   Medicine.find(query, select, cursor)
+	.where('user').equals(user._id.toString())
     .populate('user')
     .then((medicines) => medicines.map((medicine) => medicine.view()))
     .then(success(res))
     .catch(next)
 
-export const show = ({ params }, res, next) =>
+export const show = ({ user, params }, res, next) =>
   Medicine.findById(params.id)
     .populate('user')
     .then(notFound(res))
+    .then(authorOrAdmin(res, user, 'user'))
     .then((medicine) => medicine ? medicine.view() : null)
     .then(success(res))
     .catch(next)

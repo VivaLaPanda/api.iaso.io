@@ -35,7 +35,7 @@ router.post('/',
   create)
 
 /**
- * @api {get} /medicines Retrieve medicines
+ * @api {get} /medicines Retrieve medicines belong to user/me
  * @apiName RetrieveMedicines
  * @apiGroup Medicine
  * @apiPermission user
@@ -43,7 +43,7 @@ router.post('/',
  * @apiUse listParams
  * @apiSuccess {Object[]} medicines List of medicines.
  * @apiError {Object} 400 Some parameters may contain invalid values.
- * @apiError 401 user access only.
+ * @apiError 401 only accessable by user who created or admin.
  */
 router.get('/',
   token({ required: true }),
@@ -59,7 +59,7 @@ router.get('/',
  * @apiSuccess {Object} medicine Medicine's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Medicine not found.
- * @apiError 401 user access only.
+ * @apiError 401 only accessable by user who created or admin.
  */
 router.get('/:id',
   token({ required: true }),
@@ -86,7 +86,7 @@ router.get('/:id',
  * @apiSuccess {Object} medicine Medicine's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Medicine not found.
- * @apiError 401 user access only.
+ * @apiError 401 only accessable by user who created or admin.
  */
 router.put('/:id',
   token({ required: true }),
@@ -101,7 +101,7 @@ router.put('/:id',
  * @apiParam {String} access_token user access token.
  * @apiSuccess (Success 204) 204 No Content.
  * @apiError 404 Medicine not found.
- * @apiError 401 user access only.
+ * @apiError 401 only accessable by user who created or admin.
  */
 router.delete('/:id',
   token({ required: true }),
